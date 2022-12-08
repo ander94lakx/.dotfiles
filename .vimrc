@@ -179,3 +179,4 @@ call plug#end()
 
 colorscheme nord
 let g:lightline = { 'colorscheme': 'nord' }
+let g:nord_cursor_line_number_background = 0

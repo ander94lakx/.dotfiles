@@ -16,4 +16,11 @@ package="git"
 
 ${package_manager} go
 ${package_manager} git
+${package_manager} sway
 
+# Manual installation only if dotfiles repo exists
+if [[ -d ~/.dotfiles ]]
+then
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
