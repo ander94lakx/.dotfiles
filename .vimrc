@@ -4,8 +4,6 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" TODO: Load plugins here (pathogen or vundle)
-
 " Turn on syntax highlighting
 syntax on
 
@@ -27,10 +25,8 @@ set ruler
 " Blink cursor on error instead of beeping (grr)
 set visualbell
 
-" Highlight cursor line underneath the cursor horizontally.
+" Highlight cursor line underneath the cursor
 set cursorline
-
-" Highlight cursor line underneath the cursor vertically.
 "set cursorcolumn
 
 " Encoding
@@ -69,6 +65,9 @@ set laststatus=2
 set showmode
 set showcmd
 
+" Disables insert promp (to avoid duplication with powerline)
+set noshowmode
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
@@ -97,11 +96,86 @@ set listchars=tab:▸\ ,eol:¬
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
-colorscheme molokai
+" set t_Co=256
+" set background=dark
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+
+" put https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+" in ~/.vim/colors/ and use molokai:
+"colorscheme molokai
+
+" Viminfo
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
+
+" vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" PLUGINS
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Basic plugin selection heavily inspired by: https://github.com/danirod/vimrc
+
+" coding: related to programming itself.
+
+Plug 'w0rp/ale'
+  " this is the linter and formatter, it quacks about lint errors
+  " and when you save, it can format the code for you
+Plug 'editorconfig/editorconfig-vim' 
+  " adds support for the EditorConfig file format to Vim
+Plug 'sheerun/vim-polyglot' 
+  " extra language packs for otherwise unsupported languages
+
+" editor: related to the text editor itself.
+
+Plug 'tmsvg/pear-tree' 
+  " inserts brackets and parenthesis automatically
+Plug 'ervandew/supertab' 
+  " makes tab work in insert mode
+Plug 'alvan/vim-closetag' 
+  " closes HTML tags as they are inserted
+Plug 'tpope/vim-endwise' 
+  " it's like pear-tree but for more verbose structures like:
+  " Ruby (begin-end), Elixir (do-end), C preprocessor (#if #endif)...
+Plug 'jeffkreeftmeijer/vim-numbertoggle' 
+  " switches absolute to relative depending on inset mode
+
+" lsp: the language server capabilities
+
+Plug 'prabirshrestha/asyncomplete.vim' 
+  " manages the completion menu asynchronouslly
+Plug 'prabirshrestha/asyncomplete-lsp.vim' 
+  " use vim-lsp as a data source for asyncomplete
+Plug 'prabirshrestha/vim-lsp' 
+  " language server protocol
+Plug 'mattn/vim-lsp-settings' 
+  " defaults for a lot of programming languages, makes managing LSPs a breeze
+   
+" shell: plugins for the core vim
+Plug 'ctrlpvim/ctrlp.vim' 
+  " classic and mighty file, buffer and tag explorer, 
+  " opens on a side and doesn't take your current buffer away
+Plug 'preservim/nerdtree'
+  " explorer panel
+
+" themes
+
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
+
+call plug#end()
+
+colorscheme nord
+let g:lightline = { 'colorscheme': 'nord' }
