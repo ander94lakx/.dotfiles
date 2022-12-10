@@ -1,0 +1,28 @@
+configuration {
+    font: "Fira Code Regular 8";
+    line-margin: 10;
+
+    modi: "window,drun,run,combi";
+    combi-modi: "window,drun";
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     true;
+
+    dpi: 1;
+}
+
+
+@theme "~/.config/rofi/nord.rasi"
+
+listview {
+	lines: 20;
+	columns: 1;
+}
+
+window {
+	width: 66%;
+}

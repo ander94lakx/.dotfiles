@@ -14,9 +14,7 @@ done
 
 package="git"
 
-${package_manager} go
-${package_manager} git
-${package_manager} sway
+${package_manager} go git sway i3 alacritty zsh playerctl feh lxappearance rofi
 
 # Manual installation only if dotfiles repo exists
 if [[ -d ~/.dotfiles ]]
