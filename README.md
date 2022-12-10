@@ -4,8 +4,11 @@ My shitty dotfiles. Currently supporting configs for:
 
 - Git
 - ZSH
-- Vim (very basic config, no plugins)
-- tmux (I love these bindings <3)
+- Vim (very basic config, with some plugins)
+- tmux (I love my custom bindings)
+- Editorconfig (I will try to mantain this, I promise)
+- i3
+- Alacritty
 
 ## Scripts
 
