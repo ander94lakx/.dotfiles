@@ -70,6 +70,9 @@ bindsym $mod+Shift+d exec dmenu_run
 bindsym $mod+d exec rofi -show combi 
 bindsym $mod+i; exec  ~/.config/rofi/scripts/rofi-file-selector/rofi-file-selector.sh 
 
+# Ranger as file manager
+bindsym $mod+o exec alacritty -e ranger
+
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (CTRL+s) shutdown
 
@@ -147,16 +150,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -231,7 +234,9 @@ client.urgent           #900000 #900000 #1f222d #900000
 
 client.background       #242424
 
-default_border normal 0
+# default_border normal  
+default_border pixel 2
+default_floating_border pixel 2
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -239,16 +244,16 @@ bar {
   position top
   tray_padding 5
   separator_symbol " | "
-  font pango:FiraCode Nerd Font Mono 13
+  font pango:FiraCode Nerd Font Mono 12
   colors {
-	  separator  #5e81ac
+	  separator  #354962
     background #1f222d
-    statusline #81a1c1
+    statusline #9ab3cd
 
     #                   border  background text
-    focused_workspace  #1f222d #1f222d    #81a1c1
-    active_workspace   #1f222d #252936    #5e81ac
-    inactive_workspace #1f222d #1f222d    #4c566a
+    focused_workspace  #1f222d #1f222d    #9ab3cd
+    active_workspace   #1f222d #252936    #6e8db4
+    inactive_workspace #1f222d #1f222d    #4b688a
     urgent_workspace   #1f222d #1f222d    #ee829f
     binding_mode       #1f222d #81a1c1    #2e3440
   }
@@ -258,8 +263,18 @@ bar {
 exec_always feh --bg-scale $HOME/Irudiak/Diapo/DSC03478.jpg # TODO: change this, not basque people deserves a background too 
 
 # CUSTOM more rare or specific configurations
+
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen brightness
+
+# Screenshot and clipboard screenshot capabilities
+## Screenshot
+bindsym Print exec maim "/home/$USER/Irudiak/$(date)" && notify-send "Screenshot taken" --icon=camera-photo
+bindsym Shift+Print exec maim --select "/home/$USER/Irudiak/$(date)" && notify-send "Screenshot taken" --icon=camera-photo
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png && notify-send "Screenshot copied to clipboard" --icon=camera-photo
+bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png && notify-send "Screenshot copied to clipboard" --icon=camera-photo
 
 # Init some programs
 exec firefox

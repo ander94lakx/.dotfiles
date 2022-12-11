@@ -27,3 +27,9 @@ ln -s ~/.dotfiles/.config/rofi ~/.config/rofi
 
 # Alacritty
 ln -s ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
+
+# Ranger
+ln -s ~/.dotfiles/.config/ranger ~/.config/ranger
+
+# Dunst
+ln -s ~/.dotfiles/.config/dunst ~/.config/dunst

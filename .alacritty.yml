@@ -2,10 +2,10 @@
 
 shell:
   program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - "tmux"
+#  args:
+#    - -l
+#    - -c
+#    - "tmux"
 
 font:
   normal:
