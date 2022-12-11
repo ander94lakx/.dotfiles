@@ -33,3 +33,6 @@ ln -sfi ~/.dotfiles/.config/ranger   ~/.config/ranger
 
 # Dunst
 ln -sfi ~/.dotfiles/.config/dunst    ~/.config/dunst
+
+# My custom fonts
+ln -sfi ~/.dotfiles/.fonts           ~/
