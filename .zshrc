@@ -110,6 +110,12 @@ fi
 
 alias javascaled="java -Dsun.java2d.uiScale=2.5"
 alias tr="tree"
+alias ..="cd .."
+alias gs="git status"
+alias ls="exa"
+alias ll="exa -l"
+alias la="exa -la"
+alias cd..="cd .."
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,9 +1,10 @@
 #!/bin/bash
 declare -A osInfo;
-osInfo[/etc/debian_version]="apt-get install -y"
+osInfo[/etc/debian_version]="apt install"
 osInfo[/etc/alpine-release]="apk --update add"
-osInfo[/etc/centos-release]="yum install -y"
-osInfo[/etc/fedora-release]="dnf install -y"
+osInfo[/etc/centos-release]="yum install"
+osInfo[/etc/fedora-release]="dnf install"
+osInfo[/etc/arch-release]="pacman -S install"
 
 for f in ${!osInfo[@]}
 do
@@ -12,9 +13,22 @@ do
     fi
 done
 
-package="git"
+packages=(curl git go make perl zsh alacritty playerctl feh lxappearance rofi maim xclip exa ranger)
 
-${package_manager} go git make perl i3 alacritty zsh playerctl feh lxappearance rofi ranger maim xclip exa
+for package in ${myArray[@]}; do
+    ${package_manager} $package
+done
+
+# Installation scritps for tools
+# Oh-my-ZSH
+if command -v zsh &> /dev/null
+then
+    echo "ZSH not found, Oh-my-ZSH will NOT be installed!!!"
+else
+    wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O
+fi
+# NVM
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh
 
 # Manual installation only if dotfiles repo exists
 if [[ -d ~/.dotfiles ]]

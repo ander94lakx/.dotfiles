@@ -1,35 +1,35 @@
 #!/bin/sh
 
 # Git
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sfi ~/.dotfiles/.gitconfig       ~/.gitconfig
 
 # ZSH
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
+ln -sfi ~/.dotfiles/.zshrc           ~/.zshrc
+ln -sfi ~/.dotfiles/.p10k.zsh        ~/.p10k.zsh
 
 # Tmux
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/.tmux ~/
+ln -sfi ~/.dotfiles/.tmux.conf       ~/.tmux.conf
+ln -sfi ~/.dotfiles/.tmux            ~/
 
 # Vim
-ln -s ~/.dotfiles/.vimrc ~/.vimrc
-ln -s ~/.dotfiles/.vim ~/
+ln -sfi ~/.dotfiles/.vimrc           ~/.vimrc
+ln -sfi ~/.dotfiles/.vim             ~/
 
 # Editorconfig
-ln -s ~/.dotfiles/.editorconfig ~/.editorconfig
+ln -sfi ~/.dotfiles/.editorconfig    ~/.editorconfig
 
 # i3
-ln -s ~/.dotfiles/.i3 ~/
-ln -s ~/.dotfiles/.Xresources ~/.Xresources
-ln -s ~/.dotfiles/.zprofile ~/.zprofile
-ln -s ~/.dotfiles/.i3status.conf ~/.i3status.conf
-ln -s ~/.dotfiles/.config/rofi ~/.config/rofi
+ln -sfi ~/.dotfiles/.i3              ~/
+ln -sfi ~/.dotfiles/.Xresources      ~/.Xresources
+ln -sfi ~/.dotfiles/.zprofile        ~/.zprofile
+ln -sfi ~/.dotfiles/.i3status.conf   ~/.i3status.conf
+ln -sfi ~/.dotfiles/.config/rofi     ~/.config/rofi
 
 # Alacritty
-ln -s ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
+ln -sfi ~/.dotfiles/.alacritty.yml   ~/.alacritty.yml
 
 # Ranger
-ln -s ~/.dotfiles/.config/ranger ~/.config/ranger
+ln -sfi ~/.dotfiles/.config/ranger   ~/.config/ranger
 
 # Dunst
-ln -s ~/.dotfiles/.config/dunst ~/.config/dunst
+ln -sfi ~/.dotfiles/.config/dunst    ~/.config/dunst

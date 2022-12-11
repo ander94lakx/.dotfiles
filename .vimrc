@@ -26,7 +26,7 @@ set ruler
 set visualbell
 
 " Highlight cursor line underneath the cursor
-set cursorline
+"set cursorline
 "set cursorcolumn
 
 " Encoding
@@ -169,13 +169,20 @@ Plug 'ctrlpvim/ctrlp.vim'
   " opens on a side and doesn't take your current buffer away
 Plug 'preservim/nerdtree'
   " explorer panel
+Plug 'junegunn/fzf.vim'
+  " fuzzy finder
 
 " themes
-
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
+
+" Fix for comments with cursorbar
+"augroup nord-overrides
+"  autocmd!
+"  autocmd ColorScheme nord highlight Comment ctermfg="5f6c85" guifg="4e586d"
+"augroup END
 
 colorscheme nord
 let g:lightline = { 'colorscheme': 'nord' }
