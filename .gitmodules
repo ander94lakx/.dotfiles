@@ -1,0 +1,3 @@
+[submodule ".config/rofi/scripts/rofi-file-selector"]
+	path = .config/rofi/scripts/rofi-file-selector
+	url = https://github.com/matclab/rofi-file-selector.git
