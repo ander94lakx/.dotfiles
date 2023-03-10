@@ -67,7 +67,7 @@ bindsym $mod+Shift+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # NEV: use rofi instead of dmenu
-bindsym $mod+d exec rofi -show combi 
+bindsym $mod+d exec rofi -show drun 
 bindsym $mod+i; exec  ~/.config/rofi/scripts/rofi-file-selector/rofi-file-selector.sh 
 
 # Ranger as file manager
@@ -81,7 +81,7 @@ exec xsetroot -solid "#000000"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id i3lock && systemctl suspend, mode "default"
+    bindsym s exec --no-startup-id i3lock -c 000000 && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -150,16 +150,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "10:"
+set $ws1 "1[]"
+set $ws2 "2[]"
+set $ws3 "3[]"
+set $ws4 "4[]"
+set $ws5 "5[]"
+set $ws6 "6[拾]"
+set $ws7 "7[]"
+set $ws8 "8[]"
+set $ws9 "9[]"
+set $ws10 "10[]"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -173,17 +173,17 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+# move focused container to workspace AND go to that workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $sw10
 
 # assign apps to certain workspaces
 assign [class="Spotify"] $ws9
@@ -238,6 +238,8 @@ client.background       #242424
 default_border pixel 2
 default_floating_border pixel 2
 
+hide_edge_borders smart
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -276,5 +278,12 @@ bindsym Shift+Print exec maim --select "/home/$USER/Irudiak/$(date)" && notify-s
 bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png && notify-send "Screenshot copied to clipboard" --icon=camera-photo
 bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png && notify-send "Screenshot copied to clipboard" --icon=camera-photo
 
+# Export ennvars for gtk apps
+exec export GDK_DPI_SCALE=0.5
+exec export GDK_SCALE=2
+
+# Run custom script to change settings for the touchpad in X
+exec ./touchpad.sh
+
 # Init some programs
-exec firefox
+exec blueman-applet
