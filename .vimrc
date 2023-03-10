@@ -95,16 +95,6 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-" Color scheme (terminal)
-" set t_Co=256
-" set background=dark
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-
-" put https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-" in ~/.vim/colors/ and use molokai:
-"colorscheme molokai
-
 " Viminfo
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
 
@@ -129,48 +119,28 @@ call plug#begin()
 " Basic plugin selection heavily inspired by: https://github.com/danirod/vimrc
 
 " coding: related to programming itself.
-
-Plug 'w0rp/ale'
-  " this is the linter and formatter, it quacks about lint errors
-  " and when you save, it can format the code for you
-Plug 'editorconfig/editorconfig-vim' 
-  " adds support for the EditorConfig file format to Vim
-Plug 'sheerun/vim-polyglot' 
-  " extra language packs for otherwise unsupported languages
+Plug 'w0rp/ale' " Linter and formatter with on-save hooks
+Plug 'editorconfig/editorconfig-vim' " adds support for the .editorconfig
+Plug 'sheerun/vim-polyglot' " extra language packs for otherwise unsupported languages
 
 " editor: related to the text editor itself.
-
-Plug 'tmsvg/pear-tree' 
-  " inserts brackets and parenthesis automatically
-Plug 'ervandew/supertab' 
-  " makes tab work in insert mode
-Plug 'alvan/vim-closetag' 
-  " closes HTML tags as they are inserted
-Plug 'tpope/vim-endwise' 
-  " it's like pear-tree but for more verbose structures like:
-  " Ruby (begin-end), Elixir (do-end), C preprocessor (#if #endif)...
-Plug 'jeffkreeftmeijer/vim-numbertoggle' 
-  " switches absolute to relative depending on inset mode
+Plug 'tmsvg/pear-tree' " inserts brackets and parenthesis automatically
+Plug 'ervandew/supertab' " makes tab work in insert mode
+Plug 'alvan/vim-closetag' " closes HTML tags as they are inserted
+Plug 'tpope/vim-endwise'  " closes verbose block (begin-end, do-end, #if #endif, etc.)
+Plug 'jeffkreeftmeijer/vim-numbertoggle' " absolute/relative numbering auto toggle
+Plug 'ap/vim-css-color' " adds color highlighting to hex and color name literals
 
 " lsp: the language server capabilities
-
-Plug 'prabirshrestha/asyncomplete.vim' 
-  " manages the completion menu asynchronouslly
-Plug 'prabirshrestha/asyncomplete-lsp.vim' 
-  " use vim-lsp as a data source for asyncomplete
-Plug 'prabirshrestha/vim-lsp' 
-  " language server protocol
-Plug 'mattn/vim-lsp-settings' 
-  " defaults for a lot of programming languages, makes managing LSPs a breeze
+Plug 'prabirshrestha/asyncomplete.vim' " manages the completion menu asynchronouslly
+Plug 'prabirshrestha/asyncomplete-lsp.vim' " use vim-lsp as a data source for asyncomplete
+Plug 'prabirshrestha/vim-lsp' " language server protocol
+Plug 'mattn/vim-lsp-settings' " defaults for a lot of languages, makes managing LSPs a breeze
    
 " shell: plugins for the core vim
-Plug 'ctrlpvim/ctrlp.vim' 
-  " classic and mighty file, buffer and tag explorer, 
-  " opens on a side and doesn't take your current buffer away
-Plug 'preservim/nerdtree'
-  " explorer panel
-Plug 'junegunn/fzf.vim'
-  " fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim' " file, buffer and tag explorer that opens on a side
+Plug 'preservim/nerdtree' " explorer panel
+Plug 'junegunn/fzf.vim' " fuzzy finder
 
 " themes
 Plug 'arcticicestudio/nord-vim'
@@ -184,6 +154,10 @@ call plug#end()
 "  autocmd ColorScheme nord highlight Comment ctermfg="5f6c85" guifg="4e586d"
 "augroup END
 
+" theme
 colorscheme nord
 let g:lightline = { 'colorscheme': 'nord' }
 let g:nord_cursor_line_number_background = 0
+" put https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+" in ~/.vim/colors/ and use molokai:
+"colorscheme molokai
