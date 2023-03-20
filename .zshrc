@@ -114,6 +114,7 @@ alias ll="exa -lah"
 alias la="exa -la"
 alias cd..="cd .."
 
+alias update="sudo dnf -y update && flatpak -y update"
 alias pione="ssh pione@192.168.1.122"
 alias pitwo="ssh pitwo@192.168.1.121"
 
