@@ -16,6 +16,8 @@ ln -sfi ~/.dotfiles/.tmux             ~/
 ln -sfi ~/.dotfiles/.vimrc            ~/.vimrc
 ln -sfi ~/.dotfiles/.vim              ~/
 
+# Neovim
+ln -sfi ~/.dotfiles/nvim              ~/.config
 # Editorconfig
 ln -sfi ~/.dotfiles/.editorconfig     ~/.editorconfig
 

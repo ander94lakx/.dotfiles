@@ -8,7 +8,7 @@ garbage.
 - **Git**
 - **ZSH** as my shell
 - **Alacritty** as my terminal emulator
-- **Vim** as my terminal based text editor, with very basic config and some plugins (plugins not uploaded)
+- **Nvim** as my terminal based text editor, with very basic config and some plugins (plugins not uploaded)
 - **tmux**, as my multiplexor , with my Alt + vim-arrows custom binding
 - **Editorconfig** (I will try to mantain this, I promise)
 - **i3** (and i3status) with with Super + vim-arrows ("jkl;" ... really i3??)
