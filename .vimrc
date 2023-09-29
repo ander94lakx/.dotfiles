@@ -41,6 +41,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set noshiftround
+set lbr
 
 " Cursor motion
 set scrolloff=3
@@ -146,6 +147,12 @@ Plug 'junegunn/fzf.vim' " fuzzy finder
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
+" other
+if has('nvim')
+  Plug 'ThePrimeagen/vim-be-good'
+  set guicursor=i:block
+endif
+
 call plug#end()
 
 " Fix for comments with cursorbar
@@ -155,9 +162,13 @@ call plug#end()
 "augroup END
 
 " theme
-colorscheme nord
-let g:lightline = { 'colorscheme': 'nord' }
-let g:nord_cursor_line_number_background = 0
+" colorscheme nord
+" let g:lightline = { 'colorscheme': 'nord' }
+" let g:nord_cursor_line_number_background = 0
 " put https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 " in ~/.vim/colors/ and use molokai:
-"colorscheme molokai
+colorscheme molokai
+
+if !has('nvim')
+  set viminfo+=n~/.local/share/vim/viminfo
+endif

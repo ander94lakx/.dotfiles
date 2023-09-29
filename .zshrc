@@ -113,9 +113,10 @@ alias ls="exa"
 alias ll="exa -lah"
 alias la="exa -la"
 alias cd..="cd .."
+alias vim="nvim"
 
 alias update="sudo dnf -y update && flatpak -y update"
-alias pione="ssh pione@192.168.1.122"
+alias pione="ssh kali@192.168.1.122"
 alias pitwo="ssh pitwo@192.168.1.121"
 
 # These are aliases that will not be commited
@@ -127,3 +128,6 @@ alias pitwo="ssh pitwo@192.168.1.121"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
