@@ -105,20 +105,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias javascaled="java -Dsun.java2d.uiScale=2.5"
-alias tr="tree"
-alias ..="cd .."
-alias gs="git status"
-alias ls="exa"
-alias ll="exa -lah"
-alias la="exa -la"
-alias cd..="cd .."
-alias vim="nvim"
-
-alias update="sudo dnf -y update && flatpak -y update"
-alias pione="ssh kali@192.168.1.122"
-alias pitwo="ssh pitwo@192.168.1.121"
-
 # These are aliases that will not be commited
 [[ ! -f ~/.aliases ]] || source ~/.aliases
 
@@ -131,3 +117,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/.local/bin:$PATH
