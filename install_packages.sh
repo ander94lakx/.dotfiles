@@ -17,7 +17,7 @@ do
     fi
 done
 
-packages=(curl git go make perl zsh alacritty playerctl feh lxappearance rofi maim xclip exa ranger blueman newsboat)
+packages=(curl git go make perl zsh alacritty playerctl feh lxappearance rofi maim xclip exa ranger blueman newsboat xautolock xrandr blueman-applet xinput)
 
 for package in ${myArray[@]}
 do

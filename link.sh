@@ -7,6 +7,7 @@ ln -sfi ~/.dotfiles/.gitconfig        ~/.gitconfig
 ln -sfi ~/.dotfiles/.zshrc            ~/.zshrc
 ln -sfi ~/.dotfiles/.zprofile         ~/.zprofile
 ln -sfi ~/.dotfiles/.p10k.zsh         ~/.p10k.zsh
+ln -sfi ~/.dotfiles/.aliases          ~/.aliases
 
 # Tmux
 ln -sfi ~/.dotfiles/.tmux.conf        ~/.tmux.conf
@@ -29,7 +30,7 @@ ln -sfi ~/.dotfiles/.i3status.conf    ~/.i3status.conf
 ln -sfi ~/.dotfiles/.config/rofi      ~/.config/rofi
 
 # Alacritty
-ln -sfi ~/.dotfiles/.alacritty.yml    ~/.alacritty.yml
+ln -sfi ~/.dotfiles/.alacritty.toml   ~/.alacritty.toml
 
 # Ranger
 ln -sfi ~/.dotfiles/.config/ranger    ~/.config/ranger

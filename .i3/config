@@ -92,6 +92,9 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
+# auto lock the screen
+exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -127,8 +130,8 @@ bindsym $mod+minus split v
 
 # split in horizontal orientation
 bindsym $mod+backslash split h
-
 # enter fullscreen mode for the focused container
+
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
@@ -184,6 +187,21 @@ bindsym $mod+Shift+7 move container to workspace number $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $sw10
+
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right
+
+# Assign all workspaces by default to external display if available
+workspace $ws1 output DP-3 eDP-1
+workspace $ws2 output DP-3 eDP-1
+workspace $ws3 output DP-3 eDP-1
+workspace $ws4 output DP-3 eDP-1
+workspace $ws5 output eDP-1 DP-3
+workspace $ws6 output DP-3 eDP-1
+workspace $ws7 output DP-3 eDP-1
+workspace $ws8 output DP-3 eDP-1
+workspace $ws9 output DP-3 eDP-1
+workspace $ws10 output DP-3 eDP-1
 
 # assign apps to certain workspaces
 assign [class="Spotify"] $ws9
@@ -262,12 +280,13 @@ bar {
   status_command i3status
 }
 
-exec_always feh --bg-scale $HOME/Irudiak/Diapo/DSC03478.jpg # TODO: change this, not basque people deserves a background too 
 
 # CUSTOM more rare or specific configurations
 
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen brightness
+# bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +2%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 2%-
 
 # Screenshot and clipboard screenshot capabilities
 ## Screenshot
@@ -287,3 +306,7 @@ exec ./touchpad.sh
 
 # Init some programs
 exec blueman-applet
+
+# Screen management
+exec xrandr --output DP-3 --auto --right-of eDP-1
+exec xrandr --output DP-3 --scale 2x2
