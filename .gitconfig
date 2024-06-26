@@ -4,7 +4,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Ander Granado
+	name = Ander
 	email = ander@protonmail.com
 [core]
-	editor = vim
+	editor = nvim
