@@ -19,15 +19,18 @@ ln -sfi ~/.dotfiles/.vim              ~/
 
 # Neovim
 ln -sfi ~/.dotfiles/nvim              ~/.config
+
 # Editorconfig
 ln -sfi ~/.dotfiles/.editorconfig     ~/.editorconfig
 
-# i3
-ln -sfi ~/.dotfiles/.i3               ~/
-ln -sfi ~/.dotfiles/.Xresources       ~/.Xresources
-ln -sfi ~/.dotfiles/.zprofile         ~/.zprofile
-ln -sfi ~/.dotfiles/.i3status.conf    ~/.i3status.conf
+# Rofi
 ln -sfi ~/.dotfiles/.config/rofi      ~/.config/rofi
+
+# Sway
+ln -sfi ~/.dotfiles/.config/sway      ~/.config/sway
+
+# Waybar
+ln -sfi ~/.dotfiles/.config/waybar    ~/.config/waybar
 
 # Alacritty
 ln -sfi ~/.dotfiles/.alacritty.toml   ~/.alacritty.toml
