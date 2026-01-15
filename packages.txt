@@ -17,3 +17,4 @@ neovim
 python3-neovim
 ffmpeg
 python3-pip
+tmux
