@@ -1,48 +1,47 @@
 #!/bin/sh
 
+set -e
+
+DOT=~/.dotfiles
+
+mkdir -p ~/.config
+mkdir -p ~/.local/share
+
 # Git
-ln -sfi ~/.dotfiles/.gitconfig        ~/.gitconfig
+ln -sfn $DOT/.gitconfig ~/.gitconfig
 
 # ZSH
-ln -sfi ~/.dotfiles/.zshrc            ~/.zshrc
-ln -sfi ~/.dotfiles/.zprofile         ~/.zprofile
-ln -sfi ~/.dotfiles/.p10k.zsh         ~/.p10k.zsh
-ln -sfi ~/.dotfiles/.aliases          ~/.aliases
+ln -sfn $DOT/.zshrc     ~/.zshrc
+ln -sfn $DOT/.zprofile  ~/.zprofile
+ln -sfn $DOT/.p10k.zsh  ~/.p10k.zsh
+ln -sfn $DOT/.aliases   ~/.aliases
 
 # Tmux
-ln -sfi ~/.dotfiles/.tmux.conf        ~/.tmux.conf
-ln -sfi ~/.dotfiles/.tmux             ~/
+ln -sfn $DOT/.tmux.conf ~/.tmux.conf
+ln -sfn $DOT/.tmux      ~/.tmux
 
 # Vim
-ln -sfi ~/.dotfiles/.vimrc            ~/.vimrc
-ln -sfi ~/.dotfiles/.vim              ~/
+ln -sfn $DOT/.vimrc     ~/.vimrc
+ln -sfn $DOT/.vim       ~/.vim
 
 # Neovim
-ln -sfi ~/.dotfiles/nvim              ~/.config
+ln -sfn $DOT/nvim       ~/.config/nvim
 
 # Editorconfig
-ln -sfi ~/.dotfiles/.editorconfig     ~/.editorconfig
+ln -sfn $DOT/.editorconfig ~/.editorconfig
 
-# Rofi
-ln -sfi ~/.dotfiles/.config/rofi      ~/.config/rofi
-
-# Sway
-ln -sfi ~/.dotfiles/.config/sway      ~/.config/sway
-
-# Waybar
-ln -sfi ~/.dotfiles/.config/waybar    ~/.config/waybar
+# Config apps
+ln -sfn $DOT/.config/rofi    ~/.config/rofi
+ln -sfn $DOT/.config/sway    ~/.config/sway
+ln -sfn $DOT/.config/waybar  ~/.config/waybar
+ln -sfn $DOT/.config/ranger  ~/.config/ranger
+ln -sfn $DOT/.config/dunst   ~/.config/dunst
 
 # Alacritty
-ln -sfi ~/.dotfiles/.alacritty.toml   ~/.alacritty.toml
-
-# Ranger
-ln -sfi ~/.dotfiles/.config/ranger    ~/.config/ranger
-
-# Dunst
-ln -sfi ~/.dotfiles/.config/dunst     ~/.config/dunst
+ln -sfn $DOT/.alacritty.toml ~/.alacritty.toml
 
 # Newsboat
-ln -sfi ~/.dotfiles/.newsboat         ~/
+ln -sfn $DOT/.newsboat ~/.newsboat
 
-# My custom fonts
-ln -sfi ~/.dotfiles/.fonts            ~/
+# Fonts
+ln -sfn $DOT/.fonts ~/.local/share/fonts
