@@ -118,3 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:~/.cargo/bin/
+
+source ~/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme

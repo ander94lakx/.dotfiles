@@ -3,12 +3,14 @@
 # Installation scripts for tools
 
 # Oh-my-ZSH
-if command -v zsh &> /dev/null
+if command -v zsh >/dev/null 2>&1; 
 then
-    echo "ZSH not found, Oh-my-ZSH will NOT be installed!!!"
+  echo "ZSH found, installing Oh My Zsh..."
+  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 else
-    sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+  echo "ZSH not found, Oh My Zsh will NOT be installed!!!"
 fi
+
 
 # NVM
 sh -c "$(wget https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh -O -)"
@@ -25,3 +27,6 @@ then
     mkdir -p ~/.dotfiles/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/.tmux/plugins/tpm
 fi
+
+# eza
+cargo install eza
