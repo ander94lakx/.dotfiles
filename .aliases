@@ -9,9 +9,6 @@ alias cd..="cd .."
 alias vim="nvim"
 
 alias update="sudo dnf -y update && flatpak -y update"
-alias pione="ssh kali@192.168.1.122"
-alias pitwo="ssh pitwo@192.168.1.121"
-alias minecraft="~/Aplikazioak/Minecraft/minecraft-launcher/minecraft-launcher &"
 
 monitor () {
   xrandr --output DP-3 --auto --right-of eDP-1
