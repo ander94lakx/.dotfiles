@@ -1,3 +1,6 @@
 [submodule ".config/rofi/scripts/rofi-file-selector"]
 	path = .config/rofi/scripts/rofi-file-selector
 	url = https://github.com/matclab/rofi-file-selector.git
+[submodule "powerlevel10k"]
+	path = powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
